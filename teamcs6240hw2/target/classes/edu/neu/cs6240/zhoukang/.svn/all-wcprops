@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/2012fall_mapreduce_hw02/!svn/ver/77/trunk/hw02/program/src/edu/neu/cs6240/zhoukang
+END
+BitstringWritable.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/2012fall_mapreduce_hw02/!svn/ver/38/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/BitstringWritable.java
+END
+Tools.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/2012fall_mapreduce_hw02/!svn/ver/76/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/Tools.java
+END
+TextPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/2012fall_mapreduce_hw02/!svn/ver/59/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/TextPair.java
+END
+CSV2Arff_MapReduce.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/2012fall_mapreduce_hw02/!svn/ver/58/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/CSV2Arff_MapReduce.java
+END
+Utility.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/2012fall_mapreduce_hw02/!svn/ver/43/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/Utility.java
+END
+UnsplittableTextInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/2012fall_mapreduce_hw02/!svn/ver/16/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/UnsplittableTextInputFormat.java
+END
+CSV2Arff_MapReducePhase2.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/2012fall_mapreduce_hw02/!svn/ver/71/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/CSV2Arff_MapReducePhase2.java
+END
+EnhancedArffSaver.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/2012fall_mapreduce_hw02/!svn/ver/24/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/EnhancedArffSaver.java
+END
+TestClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/2012fall_mapreduce_hw02/!svn/ver/49/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/TestClass.java
+END
+EnhancedCSVLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/2012fall_mapreduce_hw02/!svn/ver/63/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/EnhancedCSVLoader.java
+END
+Constant.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/2012fall_mapreduce_hw02/!svn/ver/48/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/Constant.java
+END
+WekaForest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/2012fall_mapreduce_hw02/!svn/ver/77/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/WekaForest.java
+END
+CSV2Arff.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/2012fall_mapreduce_hw02/!svn/ver/47/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/CSV2Arff.java
+END
+RelativeCountsMapReduce.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/2012fall_mapreduce_hw02/!svn/ver/72/trunk/hw02/program/src/edu/neu/cs6240/zhoukang/RelativeCountsMapReduce.java
+END
