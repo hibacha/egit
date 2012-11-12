@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>scn</name>
-			<type>2</type>
-			<location>/Users/zhouyf/Stack/cs6240/teamwork/hw02/program/src</location>
-		</link>
-	</linkedResources>
 </projectDescription>
