@@ -10,7 +10,7 @@
 			"name": "Auth: Digest",
 			"item": [
 				{
-					"name": "DigestAuth Request1.3",
+					"name": "DigestAuth Request1.4",
 					"event": [
 						{
 							"listen": "test",
@@ -34,7 +34,7 @@
 							}
 						}
 					],
-					"_postman_id": "e40352b0-af25-4269-9f62-b608daef6be7",
+					"id": "e40352b0-af25-4269-9f62-b608daef6be7",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -66,8 +66,7 @@
 									"value": "ssh-secret",
 									"type": "text"
 								}
-							],
-							"options": {}
+							]
 						},
 						"url": "https://postman-echo.com/digest-auth",
 						"description": "Performing a simple `GET` request to this endpoint returns status code `401 Unauthorized` with `WWW-Authenticate` header containing information to successfully authenticate subsequent requests.\nThe `WWW-Authenticate` header must be processed to extract `realm` and `nonce` values to hash subsequent requests.\n\nWhen this request is executed within Postman, the script attached with this request does the hard work of extracting realm and nonce from the header and set it as [global variables](https://www.getpostman.com/docs/environments#global-variables?source=echo-collection-app-onboarding) named `echo_digest_nonce` and `echo_digest_realm`.\nThese variables are re-used in subsequent request for seamless integration of the two requests."
@@ -88,7 +87,7 @@
 							}
 						}
 					],
-					"_postman_id": "16f784e4-a27b-4b65-8d05-69d7c3cf4cc8",
+					"id": "16f784e4-a27b-4b65-8d05-69d7c3cf4cc8",
 					"request": {
 						"auth": {
 							"type": "digest",
@@ -113,8 +112,7 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/digest-auth",
 						"description": "This endpoint sends a hashed Digest Authorization header to gain access to a valid `200 Ok` response code. In Postman, it uses the stored [global variables](https://www.getpostman.com/docs/environments#gloval-variables?source=echo-collection-app-onboarding), `echo_digest_realm` and `echo_digest_nonce`, to generate the hashed authorisation header.\n\nWithin Postman, for this request to successfully authenticate, running the previous request \"DigestAuth Request\" stores the relevant information within the global variables."
@@ -210,7 +208,7 @@
 					]
 				}
 			],
-			"_postman_id": "6be8a0d9-474e-4619-a2ee-7b2f990d8401",
+			"id": "6be8a0d9-474e-4619-a2ee-7b2f990d8401",
 			"description": "Digest authentication protects an endpoint with a username and password without actually transmitting the password over network.\nOne has to apply a hash function (like MD5, etc) to the username and password before sending them over the network.\n\n> Username: `postman`\n>\n> Password: `password`\n\nUnlike Basic-Auth, authentication happens using two consecutive requests where the first request returns `401 Unauthorised` along with `WWW-Authenticate` header containing information that needs to be used to authenticate subsequent calls.\n\nTo know more about digest authentication, refer to the [Digest Access Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication) wikipedia article.\nThe article on [authentication helpers](https://www.getpostman.com/docs/helpers#digest-auth) elaborates how to use the same within the Postman app."
 		},
 		{
@@ -230,7 +228,7 @@
 							}
 						}
 					],
-					"_postman_id": "4399b76a-b18f-4b11-8f5d-2c12c9888637",
+					"id": "4399b76a-b18f-4b11-8f5d-2c12c9888637",
 					"request": {
 						"auth": {
 							"type": "basic",
@@ -250,8 +248,7 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/basic-auth",
 						"description": "This endpoint simulates a **basic-auth** protected endpoint. \nThe endpoint accepts a default username and password and returns a status code of `200 ok` only if the same is provided. \nOtherwise it will return a status code `401 unauthorized`.\n\n> Username: `postman`\n> \n> Password: `password`\n\nTo use this endpoint, send a request with the header `Authorization: Basic cG9zdG1hbjpwYXNzd29yZA==`. \nThe cryptic latter half of the header value is a base64 encoded concatenation of the default username and password. \nUsing Postman, to send this request, you can simply fill in the username and password in the \"Authorization\" tab and Postman will do the rest for you.\n\nTo know more about basic authentication, refer to the [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication) wikipedia article.\nThe article on [authentication helpers](https://www.getpostman.com/docs/helpers#basic-auth?source=echo-collection-app-onboarding) elaborates how to use the same within the Postman app."
@@ -361,7 +358,7 @@
 							}
 						}
 					],
-					"_postman_id": "dbbf7fe4-580d-41ee-97f6-e6b73319cb2a",
+					"id": "dbbf7fe4-580d-41ee-97f6-e6b73319cb2a",
 					"request": {
 						"auth": {
 							"type": "oauth1",
@@ -409,8 +406,7 @@
 									"value": "ssh-secret",
 									"type": "text"
 								}
-							],
-							"options": {}
+							]
 						},
 						"url": "https://postman-echo.com/oauth1",
 						"description": "OAuth1.0a is a specification that defines a protocol that can be used by one\nservice to access \"protected\" resources (endpoints) on another service. A\nmajor part of OAuth1.0 is HTTP Request Signing. This endpoint allows you to \ncheck whether the request calculation works properly in the client. \n\nThe endpoint supports the HTTP ``Authorization`` header. In case the signature\nverification fails, the endpoint provides the four debug values,\n\n* ``base_uri``\n* ``normalized_param_string``\n* ``base_string``\n* ``signing_key``\n\nFor more details about these parameters, check the [OAuth1.0a Specification](http://oauth.net/core/1.0a/)\n\nIn order to use this endpoint, you can set the following values:\n\n> Consumer Key: ``RKCGzna7bv9YD57c``\n>\n> Consumer Secret: ``D+EdQ-gs$-%@2Nu7``\n\nIf you are using Postman, also check the \"Add params to header\" and \n\"Auto add parameters\" boxes."
@@ -688,7 +684,7 @@
 							}
 						}
 					],
-					"_postman_id": "cd838714-b4f0-42dd-87bc-19a06303ae2f",
+					"id": "cd838714-b4f0-42dd-87bc-19a06303ae2f",
 					"request": {
 						"auth": {
 							"type": "hawk",
@@ -727,8 +723,7 @@
 									"value": "true",
 									"type": "text"
 								}
-							],
-							"options": {}
+							]
 						},
 						"url": "https://postman-echo.com/auth/hawk",
 						"description": "This endpoint is a Hawk Authentication protected endpoint. [Hawk authentication](https://github.com/hueniverse/hawk) is a widely used protocol for protecting API endpoints. One of Hawk's main goals is to enable HTTP authentication for services that do not use TLS (although it can be used in conjunction with TLS as well).\n\nIn order to use this endpoint, select the \"Hawk Auth\" helper inside Postman, and set the following values:\n\nHawk Auth ID: `dh37fgj492je`\n\nHawk Auth Key: `werxhqb98rpaxn39848xrunpaw3489ruxnpa98w4rxn`\n\nAlgorithm: `sha256`\n\nThe rest of the values are optional, and can be left blank. Hitting send should give you a response with a status code of 200 OK."
@@ -898,7 +893,7 @@
 					]
 				}
 			],
-			"_postman_id": "fca6e70c-0a9e-4e55-889b-3e98692139d3"
+			"id": "fca6e70c-0a9e-4e55-889b-3e98692139d3"
 		},
 		{
 			"name": "Cookies",
@@ -937,14 +932,13 @@
 							}
 						}
 					],
-					"_postman_id": "38cc09f2-763c-4cad-b8ae-90391bcf3261",
+					"id": "38cc09f2-763c-4cad-b8ae-90391bcf3261",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": {
 							"raw": "https://postman-echo.com/cookies/set?foo1=bar1&foo2=bar2",
@@ -1082,14 +1076,13 @@
 							}
 						}
 					],
-					"_postman_id": "7cdd3769-42f3-4b47-98c3-282912817319",
+					"id": "7cdd3769-42f3-4b47-98c3-282912817319",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/cookies",
 						"description": "Use this endpoint to get a list of all cookies that are stored with respect to this domain. Whatever key-value pairs that has been previously set by calling the \"Set Cookies\" endpoint, will be returned as response JSON."
@@ -1218,14 +1211,13 @@
 							}
 						}
 					],
-					"_postman_id": "b20eba80-4cbf-4307-8a04-bddba2922e81",
+					"id": "b20eba80-4cbf-4307-8a04-bddba2922e81",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": {
 							"raw": "https://postman-echo.com/cookies/delete?foo1&foo2",
@@ -1342,7 +1334,7 @@
 					]
 				}
 			],
-			"_postman_id": "670706bc-ebdb-4c50-a92a-029789f4dec1",
+			"id": "670706bc-ebdb-4c50-a92a-029789f4dec1",
 			"description": "The cookie related endpoints allow one to get, set and delete simple cookies.\n\nCookies are small snippets of information that is stored in the browser and sent back to the server with every subsequent requests in order to store useful information between requests.\nIf you want to know more about cookies, read the [HTTP Cookie](https://en.wikipedia.org/wiki/HTTP_cookie) article on wikipedia."
 		},
 		{
@@ -1372,7 +1364,7 @@
 							}
 						}
 					],
-					"_postman_id": "ad2c32f8-2f2f-4e06-af24-ef0ab120ecbb",
+					"id": "ad2c32f8-2f2f-4e06-af24-ef0ab120ecbb",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1383,8 +1375,7 @@
 						],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/headers",
 						"description": "A `GET` request to this endpoint returns the list of all request headers as part of the response JSON.\nIn Postman, sending your own set of headers through the [Headers tab](https://www.getpostman.com/docs/requests#headers?source=echo-collection-app-onboarding) will reveal the headers as part of the response."
@@ -1517,14 +1508,13 @@
 							}
 						}
 					],
-					"_postman_id": "eb83e011-ff46-4b17-8613-3ba465c94aed",
+					"id": "eb83e011-ff46-4b17-8613-3ba465c94aed",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": {
 							"raw": "https://postman-echo.com/response-headers?Content-Type=text/html&test=response_headers",
@@ -1685,7 +1675,7 @@
 					]
 				}
 			],
-			"_postman_id": "0854f303-5269-4fdc-8879-a2d337eeb5dd",
+			"id": "0854f303-5269-4fdc-8879-a2d337eeb5dd",
 			"description": "The following set of endpoints allow one to see the headers being sent as part of a request and to get a custom set of headers as part of response.\n\nHTTP header fields provide required information about the request or response, or about the object sent in the message body. Both request headers and response headers can be controlled using these endpoints."
 		},
 		{
@@ -1720,14 +1710,13 @@
 							}
 						}
 					],
-					"_postman_id": "328ab271-8044-4acb-b6ae-df89aecc9fb1",
+					"id": "328ab271-8044-4acb-b6ae-df89aecc9fb1",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": {
 							"raw": "https://postman-echo.com/get?test=123",
@@ -1778,7 +1767,7 @@
 							}
 						}
 					],
-					"_postman_id": "4c0df643-1ed3-4e7f-9d1d-5edae637f408",
+					"id": "4c0df643-1ed3-4e7f-9d1d-5edae637f408",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1789,8 +1778,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium. Praesent neque quam, tincidunt nec leo eget, rutrum vehicula magna.\nMaecenas consequat elementum elit, id semper sem tristique et. Integer pulvinar enim quis consectetur interdum volutpat.",
-							"options": {}
+							"raw": "Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium. Praesent neque quam, tincidunt nec leo eget, rutrum vehicula magna.\nMaecenas consequat elementum elit, id semper sem tristique et. Integer pulvinar enim quis consectetur interdum volutpat."
 						},
 						"url": "https://postman-echo.com/post",
 						"description": "The HTTP `POST` request method is meant to transfer data to a server \n(and elicit a response). What data is returned depends on the implementation\nof the server.\n\nA `POST` request can pass parameters to the server using \"Query String \nParameters\", as well as the Request Body. For example, in the following request,\n\n> POST /hi/there?hand=wave\n>\n> <request-body>\n\nThe parameter \"hand\" has the value \"wave\". The request body can be in multiple\nformats. These formats are defined by the MIME type of the request. The MIME \nType can be set using the ``Content-Type`` HTTP header. The most commonly used \nMIME types are:\n\n* `multipart/form-data`\n* `application/x-www-form-urlencoded`\n* `application/json`\n\nThis endpoint echoes the HTTP headers, request parameters, the contents of\nthe request body and the complete URI requested."
@@ -1824,7 +1812,7 @@
 							}
 						}
 					],
-					"_postman_id": "95f86044-a364-47cd-ad7b-7793103fa7f5",
+					"id": "95f86044-a364-47cd-ad7b-7793103fa7f5",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1846,10 +1834,7 @@
 									"value": "{{temp}}",
 									"type": "text"
 								}
-							],
-							"options": {
-								"urlencoded": {}
-							}
+							]
 						},
 						"url": "https://postman-echo.com/{{tt}}",
 						"description": "The HTTP `POST` request method is meant to transfer data to a server \n(and elicit a response). What data is returned depends on the implementation\nof the server.\n\nA `POST` request can pass parameters to the server using \"Query String \nParameters\", as well as the Request Body. For example, in the following request,\n\n> POST /hi/there?hand=wave\n>\n> <request-body>\n\nThe parameter \"hand\" has the value \"wave\". The request body can be in multiple\nformats. These formats are defined by the MIME type of the request. The MIME \nType can be set using the ``Content-Type`` HTTP header. The most commonly used \nMIME types are:\n\n* `multipart/form-data`\n* `application/x-www-form-urlencoded`\n* `application/json`\n\nThis endpoint echoes the HTTP headers, request parameters, the contents of\nthe request body and the complete URI requested when data is sent as a form parameter."
@@ -1879,10 +1864,7 @@
 											"value": "{{temp}}",
 											"type": "text"
 										}
-									],
-									"options": {
-										"urlencoded": {}
-									}
+									]
 								},
 								"url": "https://postman-echo.com/{{tt}}"
 							},
@@ -1944,7 +1926,7 @@
 							}
 						}
 					],
-					"_postman_id": "b0c38be1-0b94-434a-a598-fbbf4b4dca53",
+					"id": "b0c38be1-0b94-434a-a598-fbbf4b4dca53",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -1988,14 +1970,13 @@
 							}
 						}
 					],
-					"_postman_id": "a45f46d9-ad3b-4e67-bd64-79e19b05d591",
+					"id": "a45f46d9-ad3b-4e67-bd64-79e19b05d591",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "Curabitur auctor, elit nec pulvinar porttitor, ex augue condimentum enim, eget suscipit urna felis quis neque.\nSuspendisse sit amet luctus massa, nec venenatis mi. Suspendisse tincidunt massa at nibh efficitur fringilla. Nam quis congue mi. Etiam volutpat.",
-							"options": {}
+							"raw": "Curabitur auctor, elit nec pulvinar porttitor, ex augue condimentum enim, eget suscipit urna felis quis neque.\nSuspendisse sit amet luctus massa, nec venenatis mi. Suspendisse tincidunt massa at nibh efficitur fringilla. Nam quis congue mi. Etiam volutpat."
 						},
 						"url": "https://postman-echo.com/patch",
 						"description": "The HTTP `PATCH` method is used to update resources on a server. The exact\nuse of `PATCH` requests depends on the server in question. There are a number\nof server implementations which handle `PATCH` differently. Technically, \n`PATCH` supports both Query String parameters and a Request Body.\n\nThis endpoint accepts an HTTP `PATCH` request and provides debug information\nsuch as the HTTP headers, Query String arguments, and the Request Body."
@@ -2028,14 +2009,13 @@
 							}
 						}
 					],
-					"_postman_id": "c09f5330-9383-45e5-a8f2-c614bab74bc0",
+					"id": "c09f5330-9383-45e5-a8f2-c614bab74bc0",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "Donec fermentum, nisi sed cursus eleifend, nulla tortor ultricies tellus, ut vehicula orci arcu ut velit. In volutpat egestas dapibus.\nMorbi condimentum vestibulum sapien. Etiam dignissim diam quis eros lobortis gravida vel lobortis est. Etiam gravida sed.",
-							"options": {}
+							"raw": "Donec fermentum, nisi sed cursus eleifend, nulla tortor ultricies tellus, ut vehicula orci arcu ut velit. In volutpat egestas dapibus.\nMorbi condimentum vestibulum sapien. Etiam dignissim diam quis eros lobortis gravida vel lobortis est. Etiam gravida sed."
 						},
 						"url": "https://postman-echo.com/delete",
 						"description": "The HTTP `DELETE` method is used to delete resources on a server. The exact\nuse of `DELETE` requests depends on the server implementation. In general, \n`DELETE` requests support both, Query String parameters as well as a Request \nBody.\n\nThis endpoint accepts an HTTP `DELETE` request and provides debug information\nsuch as the HTTP headers, Query String arguments, and the Request Body."
@@ -2043,7 +2023,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "56145875-88a9-4e16-b6ec-7bbc120f67fa",
+			"id": "56145875-88a9-4e16-b6ec-7bbc120f67fa",
 			"description": "HTTP has multiple request \"verbs\", such as `GET`, `PUT`, `POST`, `DELETE`,\n`PATCH`, `HEAD`, etc. \n\nAn HTTP Method (verb) defines how a request should be interpreted by a server. \nThe endpoints in this section demonstrate various HTTP Verbs. Postman supports \nall the HTTP Verbs, including some rarely used ones, such as `PROPFIND`, `UNLINK`, \netc.\n\nFor details about HTTP Verbs, refer to [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9)\n"
 		},
 		{
@@ -2070,14 +2050,13 @@
 							}
 						}
 					],
-					"_postman_id": "1bd05917-f86e-4227-95a1-05f25ef1b6ef",
+					"id": "1bd05917-f86e-4227-95a1-05f25ef1b6ef",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/status/200",
 						"description": "This endpoint allows one to instruct the server which status code to respond with.\n\nEvery response is accompanied by a status code. The status code provides a summary of the nature of response sent by the server. For example, a status code of `200` means everything is okay with the response and a code of `404` implies that the requested URL does not exist on server. \nA list of all valid HTTP status code can be found at the [List of Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) wikipedia article. When using Postman, the response status code is described for easy reference.\n\nNote that if an invalid status code is requested to be sent, the server returns a status code of `400 Bad Request`."
@@ -2238,14 +2217,13 @@
 							}
 						}
 					],
-					"_postman_id": "995b7c06-91fb-4457-981e-af3db750f9ee",
+					"id": "995b7c06-91fb-4457-981e-af3db750f9ee",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/stream/10",
 						"description": "This endpoint allows one to recieve streaming http response using [chunked transfer encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding) of a configurable length.\n\nA streaming response does not wait for the entire response to be generated on server before flushing it out. This implies that for a fairly large response, parts of it can be streamed to the requestee as and when it is generated on server. The client can then take actions of processing this partially received data."
@@ -2272,14 +2250,13 @@
 							}
 						}
 					],
-					"_postman_id": "9cb39992-52d4-43f4-a35d-758362d509b8",
+					"id": "9cb39992-52d4-43f4-a35d-758362d509b8",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/delay/3",
 						"description": "Using this endpoint one can configure how long it takes for the server to come back with a response. Appending a number to the URL defines the time (in seconds) the server will wait before responding.\n\nNote that a maximum delay of 10 seconds is accepted by the server."
@@ -2403,14 +2380,13 @@
 							}
 						}
 					],
-					"_postman_id": "c366753a-954b-491a-a7ea-383256af467e",
+					"id": "c366753a-954b-491a-a7ea-383256af467e",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/encoding/utf8",
 						"description": "If a response of an endpoint requires to send data beyond the basic English / ASCII character set, the `charset` parameter in the `Content-Type` response header defines the character encoding policy.\n\nThis endpoint returns an `UTF8` character encoded response body with text in various languages such as Greek, Latin, East Asian, etc. Postman can interpret the character encoding and use appropriate methods to display the character set in responses."
@@ -2439,14 +2415,13 @@
 							}
 						}
 					],
-					"_postman_id": "a6e462b8-fb88-45f3-ae61-d1cbaa92c21b",
+					"id": "a6e462b8-fb88-45f3-ae61-d1cbaa92c21b",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/gzip",
 						"description": "This endpoint returns the response using [gzip compression algoritm](https://en.wikipedia.org/wiki/Gzip).\nThe uncompressed response is a JSON string containing the details of the request sent by the client. For this endpoint to work, one should request with `Accept-encoding` header containing `gzip` as part of its value. Postman supports gzip, deflate and SDCH decoding and automatically sends them as part of the request.\n\nHTTP Compression allows the server to send responses in a compressed format, which is uncompressed by the client before processing. This reduces network bandwidth consumption at the cost of increase in CPU usage.\nTo know more about this, refer the [HTTP Compression](https://en.wikipedia.org/wiki/HTTP_compression) wikipedia article."
@@ -2477,14 +2452,13 @@
 							}
 						}
 					],
-					"_postman_id": "dcc5ca1e-042c-4b59-bb53-35fcbe91b26f",
+					"id": "dcc5ca1e-042c-4b59-bb53-35fcbe91b26f",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [],
-							"options": {}
+							"formdata": []
 						},
 						"url": "https://postman-echo.com/deflate",
 						"description": "This endpoint returns the response using [deflate compression algoritm](https://en.wikipedia.org/wiki/DEFLATE). \nThe uncompressed response is a JSON string containing the details of the request sent by the client. For this endpoint to work, one should request with `Accept-encoding` header containing `deflate` as part of its value. Postman supports gzip, deflate and SDCH decoding and automatically sends them as part of the request.\n\nHTTP Compression allows the server to send responses in a compressed format, which is uncompressed by the client before processing. This reduces network bandwidth consumption at the cost of increase in CPU usage.\nTo know more about this, refer the [HTTP Compression](https://en.wikipedia.org/wiki/HTTP_compression) wikipedia article."
@@ -2507,7 +2481,7 @@
 							}
 						}
 					],
-					"_postman_id": "a5db32f9-31ad-4b06-bfd8-8f04a30924ab",
+					"id": "a5db32f9-31ad-4b06-bfd8-8f04a30924ab",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2521,7 +2495,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "38a38e41-d6e0-4847-87c7-671452f2a344"
+			"id": "38a38e41-d6e0-4847-87c7-671452f2a344"
 		},
 		{
 			"name": "Utilities / Date and Time",
@@ -2541,7 +2515,7 @@
 							}
 						}
 					],
-					"_postman_id": "c36e2ad8-0f8d-4f60-9590-430f381df88b",
+					"id": "c36e2ad8-0f8d-4f60-9590-430f381df88b",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2687,7 +2661,7 @@
 							}
 						}
 					],
-					"_postman_id": "3272269c-c585-437a-9503-b332bc84ddba",
+					"id": "3272269c-c585-437a-9503-b332bc84ddba",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -2987,7 +2961,7 @@
 							}
 						}
 					],
-					"_postman_id": "57d320e8-bc34-4285-aa96-b8bc3f5b7f1f",
+					"id": "57d320e8-bc34-4285-aa96-b8bc3f5b7f1f",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3038,7 +3012,7 @@
 							}
 						}
 					],
-					"_postman_id": "e4ba82e1-74a0-4798-b935-21ef687cd863",
+					"id": "e4ba82e1-74a0-4798-b935-21ef687cd863",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3087,7 +3061,7 @@
 							}
 						}
 					],
-					"_postman_id": "d2fd378e-2b0b-487d-a8a3-3c6529e7a697",
+					"id": "d2fd378e-2b0b-487d-a8a3-3c6529e7a697",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3136,7 +3110,7 @@
 							}
 						}
 					],
-					"_postman_id": "1c97fced-d6c5-455f-befb-75c36117de4b",
+					"id": "1c97fced-d6c5-455f-befb-75c36117de4b",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3185,7 +3159,7 @@
 							}
 						}
 					],
-					"_postman_id": "a9db6700-0ddc-4bea-96da-94aeb8279683",
+					"id": "a9db6700-0ddc-4bea-96da-94aeb8279683",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3234,7 +3208,7 @@
 							}
 						}
 					],
-					"_postman_id": "7a6dc342-a59a-4e3f-a794-47550b0d2de8",
+					"id": "7a6dc342-a59a-4e3f-a794-47550b0d2de8",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3284,7 +3258,7 @@
 							}
 						}
 					],
-					"_postman_id": "5d8c5a19-7631-4c8e-a13a-027cb68d7ab1",
+					"id": "5d8c5a19-7631-4c8e-a13a-027cb68d7ab1",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3334,7 +3308,7 @@
 							}
 						}
 					],
-					"_postman_id": "36ba78e1-c9ad-43de-8aa8-cfb882413a3b",
+					"id": "36ba78e1-c9ad-43de-8aa8-cfb882413a3b",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3384,7 +3358,7 @@
 							}
 						}
 					],
-					"_postman_id": "d8cd1d78-beb0-4ddc-97dc-6e480c94aa4f",
+					"id": "d8cd1d78-beb0-4ddc-97dc-6e480c94aa4f",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3436,7 +3410,7 @@
 							}
 						}
 					],
-					"_postman_id": "0ad29910-a533-4f18-af63-95b848ba97aa",
+					"id": "0ad29910-a533-4f18-af63-95b848ba97aa",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -3467,7 +3441,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "52031931-2950-4b8e-bf16-526582aebbda",
+			"id": "52031931-2950-4b8e-bf16-526582aebbda",
 			"description": "A set of `/time/*` mounted requests to perform date-time manipulations, among other operations.\n"
 		},
 		{
@@ -3475,7 +3449,7 @@
 			"item": [
 				{
 					"name": "Transform collection from format v1 to v2",
-					"_postman_id": "1cc003b8-00e9-49c7-993b-647bfeb38ef3",
+					"id": "1cc003b8-00e9-49c7-993b-647bfeb38ef3",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3486,8 +3460,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"7875be4b-917d-4aff-8cc4-5606c36bf418\",\n  \"name\": \"Sample Postman Collection\",\n  \"description\": \"A sample collection to demonstrate collections as a set of related requests\",\n  \"order\": [\n    \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n    \"141ba274-cc50-4377-a59c-e080066f375e\",\n    \"4511ca8b-0bc7-430f-b894-a7ec1036f322\"\n  ],\n  \"folders\": [],\n  \"requests\": [\n    {\n      \"id\": \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n      \"name\": \"A simple GET request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"GET\",\n      \"headers\": \"\",\n      \"data\": [],\n      \"rawModeData\": \"\",\n      \"tests\": \"tests['response code is 200'] = (responseCode.code === 200);\",\n      \"preRequestScript\": \"\",\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\"\n    },\n    {\n      \"id\": \"141ba274-cc50-4377-a59c-e080066f375e\",\n      \"name\": \"A simple POST request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: text/plain\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\",\n      \"url\": \"https://postman-echo.com/post\"\n    },\n    {\n      \"id\": \"4511ca8b-0bc7-430f-b894-a7ec1036f322\",\n      \"name\": \"A simple POST request with JSON body\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: application/json\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\",\n      \"url\": \"https://postman-echo.com/post\"\n    }\n  ]\n}",
-							"options": {}
+							"raw": "{\n  \"id\": \"7875be4b-917d-4aff-8cc4-5606c36bf418\",\n  \"name\": \"Sample Postman Collection\",\n  \"description\": \"A sample collection to demonstrate collections as a set of related requests\",\n  \"order\": [\n    \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n    \"141ba274-cc50-4377-a59c-e080066f375e\",\n    \"4511ca8b-0bc7-430f-b894-a7ec1036f322\"\n  ],\n  \"folders\": [],\n  \"requests\": [\n    {\n      \"id\": \"4d9134be-e8bf-4693-9cd7-1c0fc66ae739\",\n      \"name\": \"A simple GET request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"GET\",\n      \"headers\": \"\",\n      \"data\": [],\n      \"rawModeData\": \"\",\n      \"tests\": \"tests['response code is 200'] = (responseCode.code === 200);\",\n      \"preRequestScript\": \"\",\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\"\n    },\n    {\n      \"id\": \"141ba274-cc50-4377-a59c-e080066f375e\",\n      \"name\": \"A simple POST request\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: text/plain\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\",\n      \"url\": \"https://postman-echo.com/post\"\n    },\n    {\n      \"id\": \"4511ca8b-0bc7-430f-b894-a7ec1036f322\",\n      \"name\": \"A simple POST request with JSON body\",\n      \"collectionId\": \"877b9dae-a50e-4152-9b89-870c37216f78\",\n      \"method\": \"POST\",\n      \"headers\": \"Content-Type: application/json\",\n      \"dataMode\": \"raw\",\n      \"data\": [],\n      \"rawModeData\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\",\n      \"url\": \"https://postman-echo.com/post\"\n    }\n  ]\n}"
 						},
 						"url": {
 							"raw": "https://postman-echo.com/transform/collection?from=1&to=2",
@@ -3661,7 +3634,7 @@
 				},
 				{
 					"name": "Transform collection from format v2 to v1",
-					"_postman_id": "6f921d82-9cfa-4077-95d4-68cb6723493e",
+					"id": "6f921d82-9cfa-4077-95d4-68cb6723493e",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -3672,8 +3645,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"info\": {\n    \"name\": \"Sample Postman Collection\",\n    \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n    \"description\": \"A sample collection to demonstrate collections as a set of related requests\"\n  },\n\n  \"item\": [{\n    \"name\": \"A simple GET request\",\n    \"event\": [{\n      \"listen\": \"test\",\n      \"script\": {\n        \"type\": \"text/javascript\",\n        \"exec\": [\"tests['response code is 200'] = (responseCode.code === 200);\"]\n      }\n    }],\n    \"request\": {\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\",\n      \"method\": \"GET\"\n    }\n  }, {\n    \"name\": \"A simple POST request\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"text/plain\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\"\n      }\n    }\n  }, {\n    \"name\": \"A simple POST request with JSON body\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"application/json\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\"\n      }\n    }\n  }]\n}",
-							"options": {}
+							"raw": "{\n  \"info\": {\n    \"name\": \"Sample Postman Collection\",\n    \"schema\": \"https://schema.getpostman.com/json/collection/v2.0.0/collection.json\",\n    \"description\": \"A sample collection to demonstrate collections as a set of related requests\"\n  },\n\n  \"item\": [{\n    \"name\": \"A simple GET request\",\n    \"event\": [{\n      \"listen\": \"test\",\n      \"script\": {\n        \"type\": \"text/javascript\",\n        \"exec\": [\"tests['response code is 200'] = (responseCode.code === 200);\"]\n      }\n    }],\n    \"request\": {\n      \"url\": \"https://postman-echo.com/get?source=newman-sample-github-collection\",\n      \"method\": \"GET\"\n    }\n  }, {\n    \"name\": \"A simple POST request\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"text/plain\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\"\n      }\n    }\n  }, {\n    \"name\": \"A simple POST request with JSON body\",\n    \"request\": {\n      \"url\": \"https://postman-echo.com/post\",\n      \"method\": \"POST\",\n      \"header\": [{\n        \"key\": \"Content-Type\",\n        \"value\": \"application/json\"\n      }],\n      \"body\": {\n        \"mode\": \"raw\",\n        \"raw\": \"{\\\"text\\\":\\\"Duis posuere augue vel cursus pharetra. In luctus a ex nec pretium...\\\"}\"\n      }\n    }\n  }]\n}"
 						},
 						"url": {
 							"raw": "https://postman-echo.com/transform/collection?from=2&to=1",
@@ -3846,7 +3818,7 @@
 					]
 				}
 			],
-			"_postman_id": "50c7878d-72a3-4323-8f2a-0587ec19757a"
+			"id": "50c7878d-72a3-4323-8f2a-0587ec19757a"
 		}
 	],
 	"event": [
@@ -3873,25 +3845,22 @@
 	],
 	"variable": [
 		{
-			"id": "6d152d29-5641-457a-9e06-9328014e4390",
+			"id": "756d5fcc-697f-4633-8ad8-51428cdb772c",
 			"key": "myval",
-			"value": "boom",
-			"type": "string"
+			"value": "boom"
 		},
 		{
-			"id": "ce1138fa-a63d-4495-b817-c2ca3dfae724",
+			"id": "64bb0f97-3cac-4c62-8e70-ee9f0a5ba0f9",
 			"key": "url",
-			"value": "post",
-			"type": "string"
+			"value": "post"
 		},
 		{
-			"id": "c6370223-56f2-4299-939d-7884c23bbdd7",
+			"id": "7c88e0c4-f10c-4278-82a6-b5beb84f80e4",
 			"key": "tt",
-			"value": "post",
-			"type": "string"
+			"value": "post"
 		},
 		{
-			"id": "a987dc7f-6080-4f01-98b7-fff6530b5536",
+			"id": "1ad36e73-f345-47a4-a6cf-70ef2dd874dc",
 			"key": "temp",
 			"value": "temp",
 			"type": "string"
