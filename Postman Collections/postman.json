@@ -3821,7 +3821,7 @@
 			"id": "50c7878d-72a3-4323-8f2a-0587ec19757a"
 		},
 		{
-			"name": "New Request",
+			"name": "demo",
 			"id": "f9ec3315-3ae8-489a-a77b-7b3caab70a17",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -3857,22 +3857,22 @@
 	],
 	"variable": [
 		{
-			"id": "949f8666-ac71-43bc-82a4-64b8d2462e40",
+			"id": "2a992ff4-eb18-41aa-9a2a-a19bac0e059f",
 			"key": "myval",
 			"value": "boom"
 		},
 		{
-			"id": "1f73efc0-e639-4d8d-93d2-39688221e301",
+			"id": "4a595cd6-4d09-49cc-943f-a608c8c8e148",
 			"key": "url",
 			"value": "post"
 		},
 		{
-			"id": "00733935-29ac-416a-b1bc-6ba6d36ffc71",
+			"id": "bf3f7ce9-07e3-4a11-8d97-a64807c49ae2",
 			"key": "tt",
 			"value": "post"
 		},
 		{
-			"id": "81d93d83-f25f-4104-bf85-dbb1d790c497",
+			"id": "28a1c398-7260-4c7a-b673-841312375b38",
 			"key": "temp",
 			"value": "temp",
 			"type": "string"
